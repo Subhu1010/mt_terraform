@@ -1,0 +1,32 @@
+provider "aws" {
+  alias      = "mumbai"
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+provider "aws" {
+  alias      = "virginia"
+  region     = "us-east-1"
+  access_key = ""
+  secret_key = ""
+}
+
+resource "aws_instance" "mumbai_region" {
+  provider      = aws.mumbai
+  ami           = "ami-0f5ee92e2d63afc18"
+  instance_type = "t2.micro"
+  key_name      = "new"
+  tags = {
+    "Name" = "terraform"
+  }
+}
+
+resource "aws_instance" "north_virginia" {
+  provider      = aws.virginia
+  ami           = "ami-053b0d53c279acc90"
+  instance_type = "t2.micro"
+  key_name      = "nnew"
+  tags = {
+    "Name" = "terraform"
+  }
+}
