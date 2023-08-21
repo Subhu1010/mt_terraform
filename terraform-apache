@@ -1,8 +1,8 @@
 provider "aws" {
   alias      = "mumbai"
   region     = "ap-south-1"
-  access_key = "AKIA4US6HNO47T7M3F5Q"
-  secret_key = "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"
+  access_key = "**************************3F5Q"
+  secret_key = "4J***********************************3"
 }
 
 resource "aws_instance" "mumbai_region" {
